@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
     public function index()
     {
-        //
+        $users = User::all();
+        return view('users.index', [
+            'users'=>$users
+        ]);
     }
 
     /**
