@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('/users', [UsersController::class,'index']);
 Route::get('/users/{id}', [UsersController::class,'show']);
 Route::get('/users/create', [UsersController::class,'create']);
-Route::post('/userss/create', [UsersController::class,'store']);
+Route::post('/users/create', [UsersController::class,'store']);
 Route::get('/users/{id}/edit/', [UsersController::class,'edit']);
 Route::put('/users/{id}/edit/', [UsersController::class,'update']);
 Route::delete('/users/{id}', [UsersController::class,'destroy']);
