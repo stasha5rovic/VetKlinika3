@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-4">
                     
-                    <a href="/users/create/post" class="btn btn-primary btn-sm">Dodaj korisnika</a>
+                    <a href="/users/create/user" class="btn btn-primary btn-sm">Dodaj korisnika</a>
                 </div>
             </div>
 

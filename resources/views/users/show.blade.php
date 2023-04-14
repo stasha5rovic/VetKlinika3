@@ -3,21 +3,23 @@
     <div class="container">
         <div class="row">
             <div class="col-12 pt-2">
-                <a href="/blog" class="btn btn-outline-primary btn-sm">Nazad</a>
+                <a href="/users" class="btn btn-outline-primary btn-sm">Nazad</a>
                 <h1 class="display-one">{{ ucfirst($user->name) }}</h1>
-                <i>Excerpt: {{$post->excerpt}} </i> 
-
-                <p>{{$post->body}}</p> 
                 <br>
-
-                <i> Category: {{$post->category->name}}</i> 
+                <ul>
+                    <li>{{ ucfirst($user->email) }}</li>
+                    <li>{{ ucfirst($user->password) }}</li>
+                    <li>{{ ucfirst($user->phone) }}</li>
+                    <li>{{ ucfirst($user->type) }}</li>
+                </ul>
+                
                 <hr>
-                <a href="/blog/{{ $post->id }}/edit" class="btn btn-outline-primary">Uredi Post</a>
+                <a href="/users/{{ $user->id }}/edit" class="btn btn-outline-primary">Izmeni korisnika</a>
                 <br><br>
                 <form id="delete-frm" class="" action="" method="POST">
                     @method('DELETE') 
                     @csrf
-                    <button class="btn btn-danger">Obrisi Post</button>
+                    <button class="btn btn-danger">Obriši korisnika</button>
                 </form>
             </div>
         </div>

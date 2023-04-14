@@ -21,8 +21,8 @@ Route::get('/', function () {
 
 Route::get('/users', [UsersController::class,'index']);
 Route::get('/users/{id}', [UsersController::class,'show']);
-Route::get('/users/create', [UsersController::class,'create']);
-Route::post('/users/create', [UsersController::class,'store']);
+Route::get('/users/create/user', [UsersController::class,'create']);
+Route::post('/users/create/user', [UsersController::class,'store']);
 Route::get('/users/{id}/edit/', [UsersController::class,'edit']);
 Route::put('/users/{id}/edit/', [UsersController::class,'update']);
 Route::delete('/users/{id}', [UsersController::class,'destroy']);
