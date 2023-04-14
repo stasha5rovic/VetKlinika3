@@ -40,12 +40,12 @@ class UsersController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(User $user)
+    public function edit($userId)
     {
-        //
+        $user = User::find($userId);
+        return view('users.edit', [
+            'user'=>$user
+        ]);
     }
 
     /**
