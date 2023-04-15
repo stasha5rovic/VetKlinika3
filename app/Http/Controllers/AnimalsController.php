@@ -8,58 +8,53 @@ use Illuminate\Http\Request;
 class AnimalsController extends Controller
 {
    
-    public function index() //get all
+    public function index() 
     {
         $animals = Animal::all();
-        return $animals;
+        return view('animals.index', [
+            'animals'=>$animals
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create() //get
+    public function create()
     {
-        //
+        return view('animals.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request) //post
+    public function store(Request $request)
     {
-        //
+        $newAnimal = Animal::create([
+            'animalType'=>$request->type,
+            'animalName'=>$request->name,
+            'dob'=>$request->dob,
+            'weight'=>$request->weight,
+        ]);
+
+        return redirect('animals/' . $newAnimal->id);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show($animalId)   //get one
     {
         $animal = Animal::find($animalId);
-        return $animal;
+        return view('animals.show', [
+            'animal'=>$animal
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Animal $animal) //get one
+    public function edit(Animal $animal) 
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Animal $animal)  //put
+    public function update(Request $request, Animal $animal)  
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Animal $animal)   //delete
+    public function destroy($animalId) 
     {
-        //
+        $animal = Animal::find($animalId);
+        $animal->delete;
+        return redirect('/animals');
     }
 }

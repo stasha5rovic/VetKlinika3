@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnimalsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\VisitsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +31,16 @@ Route::delete('/users/{id}', [UsersController::class,'destroy']);
 
 Route::get('/animals', [AnimalsController::class,'index']);
 Route::get('/animals/{id}', [AnimalsController::class,'show']);
-Route::get('/animals/create', [AnimalsController::class,'create']);
-Route::post('/animals/create', [AnimalsController::class,'store']);
+Route::get('/animals/create/animal', [AnimalsController::class,'create']);
+Route::post('/animals/create/animal', [AnimalsController::class,'store']);
 Route::get('/animals/{id}/edit/', [AnimalsController::class,'edit']);
 Route::put('/animals/{id}/edit/', [AnimalsController::class,'update']);
 Route::delete('/animals/{id}', [AnimalsController::class,'destroy']);
+
+Route::get('/visits', [VisitsController::class,'index']);
+Route::get('/visits/{id}', [VisitsController::class,'show']);
+Route::get('/visits/create/visit', [VisitsController::class,'create']);
+Route::post('/visits/create/visit', [VisitsController::class,'store']);
+Route::get('/visits/{id}/edit/', [VisitsController::class,'edit']);
+Route::put('/visits/{id}/edit/', [VisitsController::class,'update']);
+Route::delete('/visits/{id}', [VisitsController::class,'destroy']);

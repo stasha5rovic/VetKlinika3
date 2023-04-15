@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Visit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VisitsController extends Controller
 {
@@ -31,12 +32,13 @@ class VisitsController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Visit $visit)
+   
+    public function show($animalId)
     {
-        //
+        $visits = DB::table('visits')->where('animal_id', '=', $animalId)->get();
+        return view('visits.show', [
+            'visits'=>$visits
+        ]);
     }
 
     /**

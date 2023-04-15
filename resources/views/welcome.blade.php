@@ -9,8 +9,8 @@
                 <p> <b>Dobro došli na sajt naše klinike! Ako imate nalog, ulogujte se:</b></p>
                 <br><br><br><br>
                 <a href="/users" class="btn btn-outline-primary">Administrator</a>
-                <a href="/employee" class="btn btn-outline-primary">Zaposleni</a>
-                <a href="/client" class="btn btn-outline-primary">Klijent</a>
+                <a href="/animals" class="btn btn-outline-primary">Zaposleni</a>
+                <a href="/visits" class="btn btn-outline-primary">Klijent</a>
     
                
             </div>
