@@ -21,17 +21,19 @@ class UsersController extends Controller
         return view('users.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $newUser = User::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>$request->password,
+            'phone'=>$request->phone,
+            'type'=>$request->type,
+        ]);
+
+        return redirect('users/' . $newUser->id);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show($userId)
     {
         $user = User::find($userId);
@@ -48,19 +50,25 @@ class UsersController extends Controller
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $userId)
     {
-        //
+        $user = User::find($userId);
+        $user->update([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>$request->password,
+            'phone'=>$request->phone,
+            'type'=>$request->type,
+        ]);
+
+        return redirect('users/' . $user->id);
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(User $user)
+    public function destroy($userId)
     {
-        //
+        $user = User::find($userId);
+        $user->delete;
+        return redirect('/users');
     }
 }
