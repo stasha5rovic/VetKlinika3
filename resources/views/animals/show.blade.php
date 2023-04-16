@@ -13,9 +13,9 @@
                 </ul>
                 
                 <hr>
-                <a href="/animals/{{ $animal->id }}/edit" class="btn btn-outline-primary">Izmeni podatke pacijenta</a>
+                <a href="/visits/{{ $animal->id }}" class="btn btn-outline-primary btn-sm">Prikaži posete pacijenta</a>
                 <br><br>
-                <a href="/visits/{{ $animal->id }}" class="btn btn-outline-primary btn-sm">Prikaži sve posete pacijenta</a>
+                <a href="/" class="btn btn-outline-primary btn-sm">Zakaži kontrolu</a>
                 <br><br><br>
                 <form id="delete-frm" class="" action="" method="POST">
                     @method('DELETE') 

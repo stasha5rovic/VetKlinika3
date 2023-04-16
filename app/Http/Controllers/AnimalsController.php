@@ -33,7 +33,7 @@ class AnimalsController extends Controller
         return redirect('animals/' . $newAnimal->id);
     }
 
-    public function show($animalId)   //get one
+    public function show($animalId)   
     {
         $animal = Animal::find($animalId);
         return view('animals.show', [

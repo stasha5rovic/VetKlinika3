@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Visit;
+use App\Models\Animal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,20 +17,28 @@ class VisitsController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        $animals = Animal::all();
+        $users = DB::table('users')->where('type', '=', 'client')->get();
+        return view('visits.create', [
+            'animals' => $animals,
+            'users' => $users,
+        ]);
+      
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+            $newVisit = Visit::create([
+            'animal_id' => $request->animalId,
+            'user_id' => $request->userId,
+            'date' => $request->date,
+            'diagnosis' => $request->diagnosis,
+            'meds' => $request->meds
+        ]);
+
+        return redirect('visits/' . $request->animalId);
     }
 
    

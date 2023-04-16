@@ -24,7 +24,7 @@
                             </div>
                             <div class="control-group col-12 mt-2">
                                 <label for="dob">Datum rođenja:</label>
-                                <input type="text" id="dob" class="form-control" name="dob" placeholder="Unesite datum rođenja"
+                                <input type="date" id="dob" class="form-control" name="dob" placeholder="Unesite datum rođenja"
                                           rows="" required></input>
                             </div>
                             <div class="control-group col-12">
@@ -37,7 +37,7 @@
                         <div class="row mt-2">
                             <div class="control-group col-12 text-center">
                                 <button id="btn-submit" class="btn btn-primary">
-                                    Zapamti korisnika
+                                    Zapamti pacijenta
                                 </button>
                             </div>
                         </div>
