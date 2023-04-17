@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::resource('/users', UsersController::class)->only(['index', 'show']);
+Route::resource('/users', UsersController::class);
+Route::resource('/users/{user}', UsersController::class);
+
 
 Route::resource('/animals', AnimalsController::class);
+Route::resource('/animals/{animal}', AnimalsController::class);

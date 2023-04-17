@@ -26,7 +26,15 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $newUser = User::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>$request->password,
+            'phone'=>$request->phone,
+            'type'=>$request->type,
+        ]);
+
+        return $newUser;
     }
 
    
@@ -48,8 +56,10 @@ class UsersController extends Controller
     }
 
 
-    public function destroy(User $user)
+    public function destroy($userid)
     {
-        //
+        
+        // $user = User::find($userid);
+        // $user->delete;
     }
 }

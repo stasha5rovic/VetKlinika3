@@ -26,12 +26,17 @@ class AnimalsController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
-        //
+        $newAnimal = Animal::create([
+            'animalType'=>$request->animalType,
+            'animalName'=>$request->animalName,
+            'dob'=>$request->dob,
+            'weight'=>$request->weight,
+        ]);
+
+        return $newAnimal;
     }
 
     /**
@@ -63,6 +68,8 @@ class AnimalsController extends Controller
      */
     public function destroy(Animal $animal)
     {
-        //
+        
+        //Animal::find($animal)->delete;
+       
     }
 }
