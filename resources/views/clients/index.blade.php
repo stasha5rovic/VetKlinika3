@@ -18,7 +18,7 @@
                         <th>Terapija</th>
                         </tr>
                 </thead>
-                <tbody>
+                <!-- <tbody>
                     @foreach($user_visits as $uv)
                     <tr>
                         <td> {{$uv->date}} </td>
@@ -26,7 +26,7 @@
                         <td> {{$uv->meds}} </td>
                     </tr>
                     @endforeach
-                </tbody>
+                </tbody> -->
             </table>
 
 
