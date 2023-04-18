@@ -58,20 +58,19 @@ class AnimalsController extends Controller
     
     public function update(Request $request, Animal $animal)
     {
-        $animal = Animal::find($animal);
-        $animal->update([
-            'animalType'=>$request->animalType,
-            'animalName'=>$request->animalName,
-            'dob'=>$request->dob,
-            'weight'=>$request->weight,
-        ]);
-        return response()->json(['Podaci pacijenta su uspešno izmenjeni.']);
+        $animal->animalType=$request->animalType;
+        $animal->animalName=$request->animalName;
+        $animal->dob=$request->dob;
+        $animal->weight=$request->weight;
+        $animal->save();
+        return response()->json(['Podaci pacijenta su uspešno izmenjeni', new AnimalResource($animal)]);
     }
+    
 
    
     public function destroy(Animal $animal)
     {
-        $animal->delete;
+        $animal->delete();
         return response()->json(['Pacijent je uspešno obrisan.']);
        
     }

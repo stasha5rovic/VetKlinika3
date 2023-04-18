@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.clinic')
 @section('content')
     <div class="container">
         <div class="row">
@@ -10,7 +10,7 @@
                 <br><br><br><br>
                 <a href="/users" class="btn btn-outline-primary">Administrator</a>
                 <a href="/animals" class="btn btn-outline-primary">Zaposleni</a>
-                <a href="/visits" class="btn btn-outline-primary">Klijent</a>
+                <a href="/clients" class="btn btn-outline-primary">Klijent</a>
     
                
             </div>
