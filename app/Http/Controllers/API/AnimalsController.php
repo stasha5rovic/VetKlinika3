@@ -44,7 +44,7 @@ class AnimalsController extends Controller
      */
     public function show(Animal $animal)
     {
-        //
+        return new AnimalResource($animal);
     }
 
     /**
