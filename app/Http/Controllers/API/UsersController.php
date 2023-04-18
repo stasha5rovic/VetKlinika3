@@ -56,10 +56,9 @@ class UsersController extends Controller
     }
 
 
-    public function destroy($userid)
+    public function destroy(User $user)
     {
-        
-        // $user = User::find($userid);
-        // $user->delete;
+        $user->delete;
+        return response()->json(['Korisnik je uspešno obrisan.']);
     }
 }

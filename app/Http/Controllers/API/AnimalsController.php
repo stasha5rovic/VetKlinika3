@@ -55,21 +55,24 @@ class AnimalsController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
     public function update(Request $request, Animal $animal)
     {
-        //
+        $animal = Animal::find($animal);
+        $animal->update([
+            'animalType'=>$request->animalType,
+            'animalName'=>$request->animalName,
+            'dob'=>$request->dob,
+            'weight'=>$request->weight,
+        ]);
+        return response()->json(['Podaci pacijenta su uspešno izmenjeni.']);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+   
     public function destroy(Animal $animal)
     {
-        
-        //Animal::find($animal)->delete;
+        $animal->delete;
+        return response()->json(['Pacijent je uspešno obrisan.']);
        
     }
 }

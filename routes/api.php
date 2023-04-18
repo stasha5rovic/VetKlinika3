@@ -21,8 +21,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::resource('/users', UsersController::class);
-Route::resource('/users/{user}', UsersController::class);
+//Route::resource('/users/{user}', UsersController::class);
 
 
-Route::resource('/animals', AnimalsController::class);
-Route::resource('/animals/{animal}', AnimalsController::class);
+Route::resource('/animals', AnimalsController::class)->only(['index', 'show', 'store', 'update','destroy']);
